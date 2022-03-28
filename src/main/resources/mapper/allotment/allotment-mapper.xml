@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.bulkinsert.repository.AllotmentMapper">
+
+    <insert id="createAllotments" parameterType="list">
+        INSERT INTO allotment
+        VALUES
+        <foreach collection="list" item="allotment" separator=",">
+            (#{allotment.id}, #{allotment.amount}, NOW(), NOW(), #{allotment.creator}, #{allotment.modifier})
+        </foreach>
+    </insert>
+</mapper>

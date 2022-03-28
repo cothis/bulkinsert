@@ -1,0 +1,12 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/am
+    username: am
+    password: am
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+mybatis:
+  type-aliases-package: com.example.bulkinsert.domain
+  configuration:
+    map-underscore-to-camel-case: true
+  mapper-locations: /mapper/**/*-mapper.xml
